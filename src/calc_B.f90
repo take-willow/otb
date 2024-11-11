@@ -14,14 +14,19 @@ contains
     double precision :: len_dpos
     integer :: igrid,kgrid
 
+
     current = (/ 0.d0, current_y, 0.d0 /)
 
     do igrid = 0,xmesh
       do kgrid = 0,zmesh
+        ! グリッドの座標を計算
         grid_pos = (/ igrid*dx, 0.d0, kgrid*dz /)
+        ! 磁石-グリッド間のベクトルを計算
         dpos = subtractVector(grid_pos,current_pos)
         ! 実際の長さに変換
+        ! lrealではなくlpicの方がいいかも(要検討)
         dpos = (/ dpos(1)*lreal/(xmesh*dx), 0.d0, dpos(3)*lreal/(zmesh*dz) /)
+        ! ベクトルの大きさを計算
         len_dpos = sqrt(innerProduct(dpos,dpos))
         ! 電流素片がグリッドに作る磁場を計算
         b_grid = scalarProduct(MU/(4*PI*(len_dpos**3.d0)),outerProduct(current,dpos))

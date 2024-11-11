@@ -6,3 +6,5 @@ dz=`grep 'dz' ./results/calculate_condition.dat | awk '{print $2}'`
 
 gnuplot -e "xmesh='${xmesh}';zmesh='${zmesh}';dx='${dx}';dz='${dz}'" ./visualise/B_vector.gp
 gnuplot -e "xmesh='${xmesh}';zmesh='${zmesh}';dx='${dx}';dz='${dz}'" ./visualise/B_strength.gp
+gnuplot -e "xmesh='${xmesh}';zmesh='${zmesh}';dx='${dx}';dz='${dz}'" ./visualise/B_x.gp
+gnuplot -e "xmesh='${xmesh}';zmesh='${zmesh}';dx='${dx}';dz='${dz}'" ./visualise/B_z.gp

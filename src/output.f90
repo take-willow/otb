@@ -31,6 +31,7 @@ contains
       do kgrid = 0,zmesh
         write(11,'(*(es12.3e2,:, ","))') igrid*dx, kgrid*dz, B(igrid,kgrid,1), B(igrid,kgrid,3)
       enddo
+      write(11,*)
     enddo
 
     close(11)
