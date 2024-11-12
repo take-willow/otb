@@ -7,9 +7,9 @@ module prm
   ! 真空の透磁率
   double precision,parameter :: MU = 1.25663706d-6
   ! x方向のメッシュ数(グリッド数-1)
-  integer,parameter :: xmesh = 80
+  integer,parameter :: xmesh = 81
   ! z方向のメッシュ数(グリッド数-1)
-  integer,parameter :: zmesh = 80
+  integer,parameter :: zmesh = 81
   ! x方向のメッシュの規格化サイズ
   double precision,parameter :: dx = 0.5d0
   ! z方向のメッシュの規格化サイズ
