@@ -12,7 +12,6 @@ coll
 run.test
 PICini
 *.log
-*.txt
 *.csv
 *.pdf
 *.out
