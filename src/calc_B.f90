@@ -24,7 +24,6 @@ contains
         ! 磁石-グリッド間のベクトルを計算
         dpos = subtractVector(grid_pos,current_pos)
         ! 実際の長さに変換
-        ! lrealではなくlpicの方がいいかも(要検討)
         dpos = (/ dpos(1)*lreal/(xmesh*dx), 0.d0, dpos(3)*lreal/(zmesh*dz) /)
         ! ベクトルの大きさを計算
         len_dpos = sqrt(innerProduct(dpos,dpos))

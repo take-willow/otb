@@ -17,9 +17,8 @@ module prm
   ! 各グリッドの磁場(3次元)
   double precision :: B(0:xmesh,0:zmesh,1:3)
   ! 実際の装置サイズ
+  ! lrealよりもlpicの方が良いかも（要検討）
   double precision,parameter :: lreal = 1.d-4
-  ! シミュレーション上の装置サイズ
-  double precision,parameter :: lpic = 1.d-4
   ! 磁石の数
   integer,parameter :: magnet_num = 2
   ! 磁石の情報（magnet_type.f90参照）

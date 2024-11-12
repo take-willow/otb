@@ -15,9 +15,9 @@ contains
 
     ! 電流量の設定
     if((mg%wall.eq.'L' .and. mg%pole.eq.'N') .or. (mg%wall.eq.'R' .and. mg%pole.eq.'S')) then
-      current_y = mg%strength/((mg%width*lpic/(zmesh*dz))*1)
+      current_y = mg%strength/((mg%width*lreal/(zmesh*dz))*1)
     else if((mg%wall.eq.'L' .and. mg%pole.eq.'S') .or. (mg%wall.eq.'R' .and. mg%pole.eq.'N')) then
-      current_y = -mg%strength/((mg%width*lpic/(zmesh*dz))*1)
+      current_y = -mg%strength/((mg%width*lreal/(zmesh*dz))*1)
     else
       write(*,*) "Invalid input.(pole)"
       stop 1
