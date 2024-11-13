@@ -14,4 +14,5 @@ set yrange [0:zmesh*dz]
 # plot
 set datafile separator ","
 set output './results/B_vector.png'
-plot "./results/B.csv" every ::1 w vectors
+# 画像の可読性のためにベクトルの大きさを変えています
+plot "./results/B.csv" every ((1>=zmesh/40) ? 1 : zmesh/40):((1>=xmesh/40) ? 1 : xmesh/40):1 u 1:2:((sqrt($3**2+$4**2)**(0.2))*$3*xmesh/(80*sqrt($3**2+$4**2))):((sqrt($3**2+$4**2)**(0.2))*$4*zmesh/(80*sqrt($3**2+$4**2))) w vectors

@@ -6,7 +6,7 @@ module mod_calc_B
 
 contains
 
-  ! magnet_posに存在する電流量current_yの電流素片についての計算
+  ! current_posに存在する電流量current_yの電流素片についての計算
   subroutine calcB(current_pos,current_y)
     double precision,intent(in) :: current_pos(1:3)
     double precision,intent(in) :: current_y

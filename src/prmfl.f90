@@ -7,9 +7,9 @@ module prm
   ! 真空の透磁率
   double precision,parameter :: MU = 1.25663706d-6
   ! x方向のメッシュ数(グリッド数-1)
-  integer,parameter :: xmesh = 81
+  integer,parameter :: xmesh = 401
   ! z方向のメッシュ数(グリッド数-1)
-  integer,parameter :: zmesh = 81
+  integer,parameter :: zmesh = 401
   ! x方向のメッシュの規格化サイズ
   double precision,parameter :: dx = 0.5d0
   ! z方向のメッシュの規格化サイズ
@@ -20,10 +20,12 @@ module prm
   ! lrealよりもlpicの方が良いかも（要検討）
   double precision,parameter :: lreal = 1.d-4
   ! 磁石の数
-  integer,parameter :: magnet_num = 2
+  integer,parameter :: magnet_num = 4
   ! 磁石の情報（magnet_type.f90参照）
   type(Magnet) :: magnets(1:magnet_num) = (/&
-    &Magnet('L','N',zmesh*dz/2,5.d-8,dz),&
-    &Magnet('R','S',zmesh*dz/2,5.d-8,dz)&
+    &Magnet('L','S',zmesh*dz/2,5.d-8,dz),&
+    &Magnet('L','N',zmesh*dz,5.d-8,dz),&
+    &Magnet('R','N',zmesh*dz/2,5.d-8,dz),&
+    &Magnet('R','S',zmesh*dz,5.d-8,dz)&
   &/)
 end module prm
