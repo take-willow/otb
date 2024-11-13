@@ -20,12 +20,16 @@ module prm
   ! lrealよりもlpicの方が良いかも（要検討）
   double precision,parameter :: lreal = 1.d-4
   ! 磁石の数
-  integer,parameter :: magnet_num = 4
+  integer,parameter :: magnet_num = 8
   ! 磁石の情報（magnet_type.f90参照）
   type(Magnet) :: magnets(1:magnet_num) = (/&
-    &Magnet('L','S',zmesh*dz/2,5.d-8,dz),&
+    &Magnet('L','S',zmesh*dz/4,5.d-8,dz),&
+    &Magnet('L','N',zmesh*dz/2,5.d-8,dz),&
+    &Magnet('L','S',zmesh*dz*3/4,5.d-8,dz),&
     &Magnet('L','N',zmesh*dz,5.d-8,dz),&
-    &Magnet('R','N',zmesh*dz/2,5.d-8,dz),&
+    &Magnet('R','N',zmesh*dz/4,5.d-8,dz),&
+    &Magnet('R','S',zmesh*dz/2,5.d-8,dz),&
+    &Magnet('R','N',zmesh*dz*3/4,5.d-8,dz),&
     &Magnet('R','S',zmesh*dz,5.d-8,dz)&
   &/)
 end module prm
